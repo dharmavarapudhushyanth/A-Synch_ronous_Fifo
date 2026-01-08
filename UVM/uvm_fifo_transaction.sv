@@ -1,11 +1,4 @@
-/**********************************************************************/
-/* ECE -593 FUNDAMENTALS OF PRESILICON VALIDATION                     */
-/*				FINAL PROJECT										  */		
-/* Authors : Achyuth Krishna Chepuri                                  */
-/*			 Amrutha Regalla                                          */
-/* 			 Sai Sri Harsha Atmakuri                                  */
-/*			 Sathwik Reddy Madireddy                                  */ 
-/**********************************************************************/
+
 
 /*This module includes all the signals which are needed to be randomised along with other signals.*/
 
