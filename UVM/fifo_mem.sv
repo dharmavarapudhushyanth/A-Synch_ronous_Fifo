@@ -1,11 +1,3 @@
-/**********************************************************************/
-/* ECE -593 FUNDAMENTALS OF PRESILICON VALIDATION                     */
-/*				FINAL PROJECT										  */		
-/* Authors : Achyuth Krishna Chepuri                                  */
-/*			 Amrutha Regalla                                          */
-/* 			 Sai Sri Harsha Atmakuri                                  */
-/*			 Sathwik Reddy Madireddy                                  */ 
-/**********************************************************************/
 
 module fifo_mem #(parameter Data_Width=8,Addr_Width=9,Depth=512)(wclk,rclk,rrst,wrst,winc,rinc,full,empty,data_in,wr_addr,rd_addr,data_out);
 
