@@ -1,11 +1,3 @@
-/**********************************************************************/
-/* ECE -593 FUNDAMENTALS OF PRESILICON VALIDATION                     */
-/*				FINAL PROJECT										  */		
-/* Authors : Achyuth Krishna Chepuri                                  */
-/*			 Amrutha Regalla                                          */
-/* 			 Sai Sri Harsha Atmakuri                                  */
-/*			 Sathwik Reddy Madireddy                                  */ 
-/**********************************************************************/
 
 /*Sequencer module manages the generation and sequencing of stimulus trasanctions 
 Build Phase and connect phase are used in the sequencer to connect to the driver and 
