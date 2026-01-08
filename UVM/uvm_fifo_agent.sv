@@ -1,11 +1,3 @@
-/**********************************************************************/
-/* ECE -593 FUNDAMENTALS OF PRESILICON VALIDATION                     */
-/*				FINAL PROJECT										  */		
-/* Authors : Achyuth Krishna Chepuri                                  */
-/*			 Amrutha Regalla                                          */
-/* 			 Sai Sri Harsha Atmakuri                                  */
-/*			 Sathwik Reddy Madireddy                                  */ 
-/**********************************************************************/
 
 /* Agent consists of driver,monitor and sequencer. In the build phase, create methods for the sequencer, driver, 
 and monitor using the factory registration methods from the `uvm_object` class. */
