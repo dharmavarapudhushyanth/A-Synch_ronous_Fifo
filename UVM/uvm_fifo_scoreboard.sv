@@ -1,11 +1,3 @@
-/**********************************************************************/
-/* ECE -593 FUNDAMENTALS OF PRESILICON VALIDATION                     */
-/*				FINAL PROJECT										  */		
-/* Authors : Achyuth Krishna Chepuri                                  */
-/*			 Amrutha Regalla                                          */
-/* 			 Sai Sri Harsha Atmakuri                                  */
-/*			 Sathwik Reddy Madireddy                                  */ 
-/**********************************************************************/
 
 /* Scoreboard is to validate the output from the DUT to the output of the reference model*/
 class fifo_scoreboard extends uvm_scoreboard;
