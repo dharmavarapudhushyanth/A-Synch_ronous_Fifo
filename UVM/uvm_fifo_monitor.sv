@@ -1,11 +1,3 @@
-/**********************************************************************/
-/* ECE -593 FUNDAMENTALS OF PRESILICON VALIDATION                     */
-/*				FINAL PROJECT										  */		
-/* Authors : Achyuth Krishna Chepuri                                  */
-/*			 Amrutha Regalla                                          */
-/* 			 Sai Sri Harsha Atmakuri                                  */
-/*			 Sathwik Reddy Madireddy                                  */ 
-/**********************************************************************/
 
 /*Monitor continously gathers data from DUT and sends to scoreboard.
 During build phase, monitor uses uvm_config_db to ensure proper connection 
