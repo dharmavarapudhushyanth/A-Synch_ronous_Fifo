@@ -98,6 +98,41 @@ endinterface
     9. Reset write Domain
     10. Reset Read Domain
     11. Data valid checks
+
+
+No write :
+assert property (@(posedge clk) disable iff(!w_rst_n) (!w_en || full ) |=> ($stable(waddr) && $stable(wptr));
+
+Reset Assertion:
+assert property(@(posedge clk) !wrst_n |=> (waddr == '0 && wptr == '0 && full == '0));
+
+Legal write:
+assert property(@(posedge clk) disable iff(!w_rst_n) (!full && w_en) |=> waddr == $past(waddr) + 1);
+
+Gray code conversion is correct
+assert property (@(posedge clk) disable iff(!w_rst_n) wptr == ((waddr >> 1) ^ waddr));
+
+gray conversion one bit change 
+assert property (@(posedgeclk) disable iff(!w_rst_n) (w-en && !full)|=> $onehot(wptr ^ $past(wptr)));
+
+reset assertion
+assert property(@(posedgclk) !r_rst_n |=> (r_addr == '0 && R-ptr == '0 && empty == 'b1));
+
+noread
+assert property(@(posedge clk) disable iff(!rst_n) (empty || !r_en) |=> $stable(rptr) && $stable(r_addr));
+
+legal read
+assert property(@(posedge clk) disable iff(!r_rst_n) (!empty&&r_en) |=> r_addr = $past(r_addr)+1);
+
+gray conersion:
+assert property(@(posedge clk) diableiff(rpt == (raddr>>1 ^ raddr)));
+
+checking correct gray code
+assert property (@(posedge clk) disableiff(!r_rst_n) r_sync == $onehot($past(rptr)^rptr));
+
+empty flag condition
+assert property (@(posedge clk) empty = (w_ptr_sync == r_ptr));
+    
     
     
 
