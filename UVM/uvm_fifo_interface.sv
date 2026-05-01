@@ -44,3 +44,100 @@ assert property (@(posedge wclk)
                    (!rrst |-> (rptr == 0))
 ) else $error("Write pointer reset error at time %t", $time);
 endinterface 
+
+
+
+
+
+   /// synchronous FIFO Assertions
+
+   1. empty condition
+   2. full condition
+   3. no write on full.
+   4. No read on Empty
+   5. Data valid on write
+   6. Data valid on Read
+   7. Pointer Increment write 
+   8. Pointer Increment read
+   9. Reset Behaviour
+
+   Empty condition:
+   assert property(@(posedge clk) disable iff(!rst_n) (wptr == rtpr) |-> empty);
+
+   Full Condition:
+   assert property(@(posedge clk) disable iff(!rst_n) ((wptr + 1) == rptr |-> full);
+ 
+   No write on full:
+   assert property(@(posedge clk) disable iff (!rst_n) full |-> !winc);
+
+   No read on Empty:
+   assert property(@(posedge clk) disable iff(!rst_n) empty |-> !rinc);
+
+   Data Valid on Read
+   assert property(@(posedge clk) disable iff(!rst_n) rinc |-> !$isunknown(data_out));
+
+   Pointer Increment(write)
+   assert property(@(posedge clk) disable iff(!rst_n) (win && !full) |-> (wptr == $past(wptr) + 1));
+
+   Pointer increment (read)
+  assert property(@(posedge clk) disable iff(!rst_n) |-> (wptr == 0 && rtpr == 0 && empty && !full));
+
+   Reset Behavior
+   assert property (@(posedge clk) !rst_n |-> (wptr == 0 && rptr));
+
+
+    // Asynchronous FIFO Assertion.
+    1. Gray code check
+    2. Write pointer increment
+    3. Read pointer increment
+    4. Full Condition
+    5. Empty Condition
+    6. No write on full
+    7. No read on empty
+    8. synchronizer stability(2 flop sync idea)
+    9. Reset write Domain
+    10. Reset Read Domain
+    11. Data valid checks
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
